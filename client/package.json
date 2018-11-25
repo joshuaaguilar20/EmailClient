@@ -4,12 +4,8 @@
   "private": false,
   "dependencies": {
     "axios": "^0.18.0",
-    "fauna": "^0.4.1",
-    "faunadb": "^2.5.2",
     "http-proxy-middleware": "^0.19.0",
-    "isotope-layout": "^3.0.6",
     "materialize-css": "^1.0.0",
-    "netlify-identity-widget": "^1.4.14",
     "prettier": "^1.14.3",
     "react": "^16.6.0",
     "react-bootstrap": "^0.32.4",
@@ -37,8 +33,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "devDependencies": {
-    "npm-run-all": "^4.1.3"
-  }
+  ]
 }
