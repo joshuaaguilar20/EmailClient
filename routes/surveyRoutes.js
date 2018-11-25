@@ -6,6 +6,8 @@ const requireLogin = require('../middlewares/requireLogin');
 const requireCredits = require('../middlewares/requireCredits');
 const Mailer = require('../services/Mailer');
 const surveyTemplate = require('../services/emailTemplates/surveyTemplate');
+const request = require('request');
+
 
 const Survey = mongoose.model('surveys');
 
@@ -80,4 +82,14 @@ module.exports = app => {
       res.status(422).send(err);
     }
   });
+
+
+app.get('/api/goal', function(req, res){
+  request('https://api.meetup.com/2/open_events?key=2e75a6a33e1c6d27496e1d61a3f48&sign=true&photo-host=public&zip=95819&page=20', function (error, response, body) {
+        console.log('error:', error); // Print the error if one occurred and handle it
+        console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+        res.send(body)
+      });
+  
+  })
 };
