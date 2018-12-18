@@ -1,6 +1,6 @@
 module.exports = {
-    googleClientID: "875253937718-q166bnips1b1j3t3bskioas3loq69247.apps.googleusercontent.com",
-    googleClientSecret: "googleClientSecret",
+    googleClientID: "460626842484-dofkbk71me9kjvj8cr01nkq2m0u2jn5a.apps.googleusercontent.com",
+    googleClientSecret: "nhYAABzKimIElYnZ-acxXQGF",
     mongoURI: 'mongodb://joshuaaguilar20:J0shua11@ds113122.mlab.com:13122/email-dev',
     cookieKey: 'ireallylovecookiesandebbyandsnugs',
     stripePublicKey: "pk_test_nNrAdQIeNUfjQpHKtYzalw8A",
