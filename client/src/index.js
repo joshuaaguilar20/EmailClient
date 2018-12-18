@@ -1,22 +1,21 @@
-import 'materialize-css/dist/css/materialize.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import reduxThunk from 'redux-thunk';
-import App from './App/App';
+
+import App from './components/App';
 import reducers from './reducers';
 
-// Development only axios helpers!
-import axios from 'axios';
-window.axios = axios;
-//Creates A store Big Object to Hold StateChanging Functions
-const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
-
-
-//Apps Proivder Props As Data to Each Child Of APP 
-ReactDOM.render(
-  <Provider store={store}><App /></Provider>,
-  document.querySelector('#root')
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(
+  reducers,
+  composeEnhancers(applyMiddleware(reduxThunk))
 );
 
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.querySelector('#root')
+);
